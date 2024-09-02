@@ -1,0 +1,81 @@
+Here's an HTML and JavaScript code for a calculator that computes the average value of `d = max(floor(i) * (b-a) + a, 0)` for `i` ranging from 0 to 99:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Average Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .calculator {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="number"] {
+            width: 50px;
+            padding: 5px;
+            margin-right: 10px;
+        }
+        input[type="button"] {
+            padding: 5px 10px;
+        }
+        #result {
+            font-weight: bold;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="number" id="a" placeholder="a">
+        <span> and </span>
+        <input type="number" id="b" placeholder="b">
+        <input type="button" value="Calculate Average" onclick="calculateAverage()">
+        <span id="result"></span>
+    </div>
+
+    <script>
+        function calculateAverage() {
+            var a = parseFloat(document.getElementById('a').value);
+            var b = parseFloat(document.getElementById('b').value);
+            if (a > b) {
+                document.getElementById('result').textContent = "Error: 'a' should be less than 'b'";
+                return;
+            }
+            
+            var sum = 0;
+            for (var i = 0; i <= 99; i++) {
+                var d = Math.max(Math.floor(i) * (b - a) + a, 0);
+                sum += d;
+            }
+
+            var average = sum / 100;
+            document.getElementById('result').textContent = average.toFixed(2);
+        }
+    </script>
+</body>
+</html>
+```
+
+### Explanation:
+- **HTML**: This code includes two input fields for numbers `a` and `b`, a button to calculate the average, and a `span` to display the result.
+- **CSS**: Simple styling is applied to center the calculator and give it a clean look.
+- **JavaScript**: The `calculateAverage` function:
+  - Validates that `a` is less than `b`.
+  - Loops through values of `i` from 0 to 99.
+  - For each `i`, it calculates `d = max(floor(i) * (b - a) + a, 0)`.
+  - Sums all the values of `d` and then calculates the average.
+  - Displays the average with two decimal places.
+
+This code will calculate the desired average and display it when you press the "Calculate Average" button.
