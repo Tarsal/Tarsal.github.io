@@ -18,6 +18,12 @@
 
             // Calculate the sum
             var c = a + b;
+
+            // Check which multiplier is selected
+            var multiplier = document.querySelector('input[name="multiplier"]:checked').value;
+
+            // Multiply the sum by the selected multiplier
+            c *= parseInt(multiplier);
             
             // Display the result
             document.getElementById('result').innerHTML = "Max damage is: " + c;
@@ -33,6 +39,14 @@
 
     <label for="valueB">Skill: </label>
     <input type="number" id="valueSkill" min="0" max="120" oninput="calculateSum()"><br><br>
+
+ <p>Select a multiplier:</p>
+    <input type="radio" id="multiplyBy2" name="multiplier" value="2" checked onchange="calculateSum()">
+    <label for="multiplyBy2">Multiply by 2</label><br>
+
+    <input type="radio" id="multiplyBy3" name="multiplier" value="3" onchange="calculateSum()">
+    <label for="multiplyBy3">Multiply by 3</label><br><br>
+
 
     <p id="result"></p>
 
