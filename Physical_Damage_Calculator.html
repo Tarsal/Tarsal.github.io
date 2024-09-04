@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tibia 7.4 melee damage calculator</title>
+    <title>Attack and Skill Calculator</title>
     <script>
         function calculateSum() {
-            // Get the input values for a and b
-            var a = parseInt(document.getElementById('valueA').value);
-            var b = parseInt(document.getElementById('valueB').value);
+            // Get the input values for Attack and Skill
+            var attack = parseInt(document.getElementById('attack').value);
+            var skill = parseInt(document.getElementById('skill').value);
             
-            // Check if a and b are valid integers between 0 and 120
-            if (isNaN(a) || a < 0 || a > 120 || isNaN(b) || b < 0 || b > 120) {
+            // Check if Attack and Skill are valid integers between 0 and 120
+            if (isNaN(attack) || attack < 0 || attack > 120 || isNaN(skill) || skill < 0 || skill > 120) {
                 document.getElementById('result').innerHTML = "Please enter integers between 0 and 120.";
                 return;
             }
 
             // Calculate the sum
-            var c = a + b;
+            var c = attack + skill;
 
             // Check which multiplier is selected
             var multiplier = document.querySelector('input[name="multiplier"]:checked').value;
@@ -26,27 +26,26 @@
             c *= parseInt(multiplier);
             
             // Display the result
-            document.getElementById('result').innerHTML = "Max damage is: " + c;
+            document.getElementById('result').innerHTML = "The result is: " + c;
         }
     </script>
 </head>
 <body>
 
-    <h1>Max damage/ block calculator</h1>
+    <h1>Attack and Skill Calculator</h1>
     
-    <label for="valueA">Atk: </label>
-    <input type="number" id="valueAtk" min="0" max="120" oninput="calculateSum()"><br><br>
+    <label for="attack">Attack (0-120): </label>
+    <input type="number" id="attack" min="0" max="120" value="50" oninput="calculateSum()"><br><br>
 
-    <label for="valueB">Skill: </label>
-    <input type="number" id="valueSkill" min="0" max="120" oninput="calculateSum()"><br><br>
+    <label for="skill">Skill (0-120): </label>
+    <input type="number" id="skill" min="0" max="120" value="80" oninput="calculateSum()"><br><br>
 
- <p>Select a multiplier:</p>
+    <p>Select a multiplier:</p>
     <input type="radio" id="multiplyBy2" name="multiplier" value="2" checked onchange="calculateSum()">
     <label for="multiplyBy2">Multiply by 2</label><br>
 
     <input type="radio" id="multiplyBy3" name="multiplier" value="3" onchange="calculateSum()">
     <label for="multiplyBy3">Multiply by 3</label><br><br>
-
 
     <p id="result"></p>
 
