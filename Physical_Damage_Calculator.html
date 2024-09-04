@@ -29,13 +29,11 @@
     <h1>Sum Calculator (0 to 120)</h1>
     
     <label for="valueA">Enter value for a (0-120): </label>
-    <input type="number" id="valueA" min="0" max="120"><br><br>
+    <input type="number" id="valueA" min="0" max="120" oninput="calculateSum()"><br><br>
 
     <label for="valueB">Enter value for b (0-120): </label>
-    <input type="number" id="valueB" min="0" max="120"><br><br>
+    <input type="number" id="valueB" min="0" max="120" oninput="calculateSum()"><br><br>
 
-    <button onclick="calculateSum()">Calculate</button>
-    
     <p id="result"></p>
 
 </body>
