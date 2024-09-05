@@ -16,14 +16,39 @@
                 return;
             }
 
-            // Calculate the sum
-            var c = attack + skill;
-
             // Check which position is selected
             var var_position = document.querySelector('input[name="position"]:checked').value;
 
             // Check which stance is selected
             var var_stance = document.querySelector('input[name="stance"]:checked').value;
+            
+            var stance_multiplier:
+            
+            switch(var_stance+var_position) {
+              case 1:
+                // attacking - offensive
+                break;
+              case 2:
+                // attacking - balanced
+                break;
+              case 3:
+                // attacking - defensive
+                break;
+              case 4:
+                // defending - offensive
+                break;
+              case 5:
+                // defending - balanced
+                break;     
+              case 6:
+                // defending - defensive
+                break;
+                
+                default:
+                // code block
+            }
+            // Calculate the sum
+            var c = attack + skill;
             
             // Multiply the sum by the selected multiplier
             c *= parseInt(var_position);
@@ -44,10 +69,10 @@
     <input type="number" id="skill" min="0" max="120" value="80" oninput="calculateSum()"><br><br>
 
     <p>Select a position:</p>
-    <input type="radio" id="attacking" name="position" value="1" checked onchange="calculateSum()">
+    <input type="radio" id="attacking" name="position" value="0" checked onchange="calculateSum()">
     <label for="attacking">Attacking</label><br>
 
-    <input type="radio" id="blocking" name="position" value="2" onchange="calculateSum()">
+    <input type="radio" id="blocking" name="position" value="1" onchange="calculateSum()">
     <label for="blocking">Blocking</label><br><br>
 
   <p>Select a fighting stance:</p>
