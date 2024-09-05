@@ -22,11 +22,13 @@
             // Check which stance is selected
             var var_stance = document.querySelector('input[name="stance"]:checked').value;
             
-            var stance_multiplier:
+            var stance_multiplier;
+            var modified_stat;
             
             switch(var_stance+var_position) {
               case 1:
                 // attacking - offensive
+                modified_stat = attack + 0.2 * attack;
                 break;
               case 2:
                 // attacking - balanced
@@ -48,13 +50,13 @@
                 // code block
             }
             // Calculate the sum
-            var c = attack + skill;
+            var max_damage = (skill+10)*modified_stat;;
             
             // Multiply the sum by the selected multiplier
             c *= parseInt(var_position);
             
             // Display the result
-            document.getElementById('result').innerHTML = "The result is: " + c;
+            document.getElementById('result').innerHTML = "Max damage is: " + max_damage;
         }
     </script>
 </head>
