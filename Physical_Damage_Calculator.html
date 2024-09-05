@@ -67,6 +67,18 @@
             var max_damage = Math.floor((5 * parseInt(skill) + 50) * (modified_stat) * (99 + 99) / 2 / 10000);
             
             // Display the result
+            switch(parseInt(var_position))
+            {
+                case 0:
+                    document.getElementById('result').innerHTML = "Max damage is: " + max_damage; 
+                    break;
+                case 3:
+                    document.getElementById('result').innerHTML = "Max block is: " + max_damage; 
+                    break;
+                default:
+                    document.getElementById('result').innerHTML = "Error - invalid position";
+            
+            }
             document.getElementById('result').innerHTML = "Max damage is: " + max_damage;
             
         }
@@ -80,7 +92,7 @@
     
     <h1>Damage Calculator</h1>
     
-    <label for="attack">Attack: </label>
+    <label for="attack">Atl/ Def: </label>
     <input type="number" id="attack" min="0" max="120" value="50" oninput="calculateSum()"><br><br>
 
     <label for="skill">Skill: </label>
