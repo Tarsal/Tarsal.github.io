@@ -19,11 +19,14 @@
             // Calculate the sum
             var c = attack + skill;
 
-            // Check which multiplier is selected
-            var multiplier = document.querySelector('input[name="multiplier"]:checked').value;
+            // Check which position is selected
+            var var_position = document.querySelector('input[name="position"]:checked').value;
 
+            // Check which stance is selected
+            var var_stance = document.querySelector('input[name="stance"]:checked').value;
+            
             // Multiply the sum by the selected multiplier
-            c *= parseInt(multiplier);
+            c *= parseInt(var_position);
             
             // Display the result
             document.getElementById('result').innerHTML = "The result is: " + c;
@@ -42,7 +45,7 @@
 
     <p>Select a position:</p>
     <input type="radio" id="attacking" name="position" value="1" checked onchange="calculateSum()">
-    <label for="attacking">Blocking</label><br>
+    <label for="attacking">Attacking</label><br>
 
     <input type="radio" id="blocking" name="position" value="2" onchange="calculateSum()">
     <label for="blocking">Blocking</label><br><br>
