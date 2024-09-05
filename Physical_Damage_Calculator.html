@@ -25,6 +25,7 @@
             var stance_multiplier;
             var modified_stat;
             
+            // Switch to find and apply stance multiplier
             switch(parseInt(var_stance)+parseInt(var_position)) {
               case 1:
                 // attacking - offensive
@@ -56,11 +57,14 @@
                 
                 // code block
             }
-            // Calculate the sum
-            var max_damage = (parseInt(skill)+10)*modified_stat;
+            
+            //var max_damage = (parseInt(skill)+10)*modified_stat;
             //max_damage = parseInt(var_stance)+parseInt(var_position);
             // Multiply the sum by the selected multiplier
             //c *= parseInt(var_position);
+            
+            //Calculate max damage from skill and modified attack
+            var max_damage = (5 * parseInt(skill) + 50) * (modified_stat) * (99 + 99) / 2 / 10000;
             
             // Display the result
             document.getElementById('result').innerHTML = "Max damage is: " + max_damage;
