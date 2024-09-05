@@ -53,12 +53,13 @@
             }
             // Calculate the sum
             var max_damage = (skill+10)*modified_stat;
-            
+            max_damage = var_stance+var_position;
             // Multiply the sum by the selected multiplier
             //c *= parseInt(var_position);
             
             // Display the result
-            document.getElementById('result').innerHTML = "Max damage is: " + var_stance+var_position;
+            document.getElementById('result').innerHTML = "Max damage is: " + max_damage;
+            
         }
     </script>
 </head>
