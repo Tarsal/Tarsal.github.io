@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Max Damage and Blocking Calculator</title>
+    <title>Damage and Blocking Calculator</title>
     <script>
         function calculateSum() {
             // Get the input values for Attack and Skill
@@ -32,18 +32,23 @@
                 break;
               case 2:
                 // attacking - balanced
+                modified_stat = parseInt(attack);
                 break;
               case 3:
                 // attacking - defensive
+                modified_stat = parseInt(attack) - Math.floor(0.4 * parseInt(attack));
                 break;
               case 4:
                 // defending - offensive
+                modified_stat = parseInt(attack) - Math.floor(0.4 * parseInt(attack));
                 break;
               case 5:
                 // defending - balanced
+                modified_stat = parseInt(attack);
                 break;     
               case 6:
                 // defending - defensive
+                modified_stat = parseInt(attack) + Math.floor(0.8 * parseInt(attack));
                 break;
                 
                 default:
