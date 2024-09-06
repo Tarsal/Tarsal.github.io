@@ -23,11 +23,11 @@ table, th, td {
 
 <div style="width: 900px">
 <ul>
-<li>Magic damage formula is base_damage x (mlv x 3 + lv x 2)/100. The (mlv x 3 + lv x 2) component will be referred to as ‘magic power’.</li>
+<li>Magic damage formula is base_damage x (mlv x 3 + lv x 2)/100. The (mlv x 3 + lv x 2) component will be referred to as ‘magic power’. Base damage has a min and max component.</li>
 <li>The formula results in level having a large factor in magic power and even high level knights will start to see increases such that attack runes become viable.</li>
 <li>If magic power is less than 100, spell base damage is used. Characters will only see an increase in their spells effectiveness beyond this threshold. For knights this is around Lv43 Mlv5, for Paladins its around Lv33 Mlv11, for Mages Lv19 Mlv21. This is a great advantage to knights who get to use UH for 250hp as soon as they reach Mlv4.</li>
-<li>Magic level can be ‘trained’ more quickly by using mana potions to make runes, these runes can then be sold for more mana potions and so on. Making runes with mana fluids costs more than their sell price each round of making and selling gives less runes. The formula of how much you can multiply your natural mana regeneration this way is as follows m= (1/(1-buy/sell)), so if your sell price is 75% of the buy price you can multiply your mana regen in terms of Mlv by 4x, for the cost of the runes or cash. With manafluids for bo runes this becomes m=1/(1-(sell/(20xrune cost x 95/50)-200)), the higher the sell price the more the multiplier. This mechanism also helps anchor the sell price of runes from getting too high. Note that level is considered more valuable than magic level as it affects 5 attributes.</li>
-<li>Hunting multiplier - 3k gp/hr + mana regen + runes. Mages can also hunt while manasitting for extra income, 3k go profit per hour becomes 1+1.75=2.75x base regen and therefore up to 11x natural regen.</li>
+<li>Magic level can be ‘trained’ more quickly by using mana potions to make runes, these runes can then be sold for more mana potions and so on. Making runes with mana fluids costs more than their sell price each round of making and selling gives less runes. The formula of how much you can multiply your natural mana regeneration this way is as follows m= (1/(1-buy/sell)), so if your sell price is 75% of the buy price you can multiply your mana regen in terms of Mlv by 4x, for the cost of the runes or cash. With manafluids for bp runes this becomes m=1/(1-(sell/(20xrune cost x 95/50)-200)), the higher the sell price the more the multiplier. This mechanism also helps anchor the sell price of runes from getting too high. Note that level is considered more valuable than magic level as it affects 5 attributes.</li>
+<li>Mages can also hunt while manasitting for extra income, 3k gp profit per hour becomes 1+1.75=2.75x base regen and therefore up to 11x natural regen.</li>
 </ul>
 
 <h2>Table: Rune cost/mana for given bp price</h2>
