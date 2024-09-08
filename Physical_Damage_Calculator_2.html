@@ -92,7 +92,7 @@
     <h1>Physical Damage Calculator</h1>
     
 <h3>Attacker stats:</h3>
-<div>
+
     <label for="attack">Attack: </label>
     <input type="number" id="attack" min="0" max="120" value="50" oninput="calculateSum()"><br><br>
 
@@ -106,8 +106,7 @@
     <input type="radio" id="blocking" name="position" value="3" onchange="calculateSum()">
     <label for="blocking">Blocking</label><br><br>
 
-  <p>Fighting stance:</p>
-    <div>
+<p>Fighting stance:</p>
     <input type="radio" id="stance_offensive" name="stance" value="1" checked onchange="calculateSum()">
     <label for="stance_offensive">Offensive</label><br>
 
@@ -116,8 +115,7 @@
 
     <input type="radio" id="stance_defensive" name="stance" value="3" onchange="calculateSum()">
     <label ="stance_defensive">Defensive</label><br><br>
-    </div>
-</div>
+
 <h3>Defender stats:</h3>
     <label for="defence">Defence: </label>
     <input type="number" id="defence" min="0" max="100" value="37" oninput="calculateSum()"><br><br>
