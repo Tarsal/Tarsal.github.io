@@ -8,7 +8,7 @@
         function calculateSum() {
             // Get the input values for Attack and Skill
             var attack = parseInt(document.getElementById('attack').value);
-            var skill = parseInt(document.getElementById('skill').value);
+            var skill = parseInt(document.getElementById('attacker_skill').value);
             
             // Check if Attack and Skill are valid integers between 0 and 120
             if (isNaN(attack) || attack < 0 || attack > 120 || isNaN(skill) || skill < 0 || skill > 120) {
@@ -16,9 +16,7 @@
                 return;
             }
 
-            // Check which position is selected
-            var var_position = document.querySelector('input[name="position"]:checked').value;
-
+            
             // Check which stance is selected
             var var_stance = document.querySelector('input[name="stance"]:checked').value;
             
@@ -67,20 +65,7 @@
             var max_damage = Math.floor((5 * parseInt(skill) + 50) * (modified_stat) * (99 + 99) / 2 / 10000);
             
             // Display the result
-            switch(parseInt(var_position))
-            {
-                case 0:
-                    document.getElementById('result').innerHTML = "Max damage is: " + max_damage; 
-                    break;
-                case 3:
-                    document.getElementById('result').innerHTML = "Max block is: " + max_damage; 
-                    break;
-                default:
-                    document.getElementById('result').innerHTML = "Error - invalid position";
-            
-            }
-            
-        document.getElementById('result').innerHTML = "Hello world";
+            document.getElementById('result').innerHTML = "Hello world";
         }
     </script>
 </head>
