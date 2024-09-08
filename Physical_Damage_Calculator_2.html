@@ -91,7 +91,7 @@
     
     <h1>Physical Damage Calculator</h1>
     
-<p>Enter attacker attack and skill:</p>
+<p>Attacker stats:</p>
     <label for="attack">Attack: </label>
     <input type="number" id="attack" min="0" max="120" value="50" oninput="calculateSum()"><br><br>
 
@@ -105,7 +105,7 @@
     <input type="radio" id="blocking" name="position" value="3" onchange="calculateSum()">
     <label for="blocking">Blocking</label><br><br>
 
-  <p>Select a fighting stance:</p>
+  <p>Fighting stance:</p>
     <input type="radio" id="stance_offensive" name="stance" value="1" checked onchange="calculateSum()">
     <label for="stance_offensive">Offensive</label><br>
 
@@ -115,15 +115,18 @@
     <input type="radio" id="stance_defensive" name="stance" value="3" onchange="calculateSum()">
     <label ="stance_defensive">Defensive</label><br><br>
 
-    <p>Enter defender defence and skill:</p>
-    <label for="defence">Atk/ Def: </label>
-    <input type="number" id="defence" min="0" max="120" value="50" oninput="calculateSum()"><br><br>
+    <p>Defender stats:</p>
+    <label for="defence">Defence: </label>
+    <input type="number" id="defence" min="0" max="100" value="37" oninput="calculateSum()"><br><br>
 
     <label for="skill">Skill: </label>
     <input type="number" id="defender_skill" min="0" max="120" value="80" oninput="calculateSum()"><br><br>
 
+    <label for="armour">Armour: </label>
+    <input type="number" id="defender_armour" min="0" max="100" value="30" oninput="calculateSum()"><br><br>
 
-  <p>Select defender fighting stance:</p>
+
+  <p>Defender fighting stance:</p>
     <input type="radio" id="stance_offensive" name="stance_defender" value="1" checked onchange="calculateSum()">
     <label for="stance_offensive">Offensive</label><br>
 
