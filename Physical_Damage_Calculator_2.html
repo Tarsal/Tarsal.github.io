@@ -5,6 +5,15 @@
     <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
     <title>Tibiantis and Damage Calculator</title>
     <script>
+        function attack_modifier(attack, stance, position) {
+                //stancenum is a number 1-3 where 1 is offensive
+            var xx = attack + 10;
+            
+            return xx;
+            
+        }//end of stat modifier
+    
+    
         function calculateSum() {
             // Get the input values for Attack and Skill
             var attack = parseInt(document.getElementById('attack').value);
@@ -121,16 +130,6 @@
 
     <p id="result"></p>
     
-<script>
-function attack_modifier(attack, stance, position) {
-    //stancenum is a number 1-3 where 1 is offensive
-var xx = attack + 10;
-
-return xx;
-
-}//end of stat modifier
-
-</script>
 
 </body>
 </html>
