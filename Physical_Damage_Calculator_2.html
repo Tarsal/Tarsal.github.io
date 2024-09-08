@@ -91,11 +91,12 @@
     
     <h1>Physical Damage Calculator</h1>
     
-    <label for="attack">Atk/ Def: </label>
+<p>Enter attacker attack and skill:</p>
+    <label for="attack">Attack: </label>
     <input type="number" id="attack" min="0" max="120" value="50" oninput="calculateSum()"><br><br>
 
     <label for="skill">Skill: </label>
-    <input type="number" id="skill" min="0" max="120" value="80" oninput="calculateSum()"><br><br>
+    <input type="number" id="attacker_skill" min="0" max="120" value="80" oninput="calculateSum()"><br><br>
 
     <p>Select a position:</p>
     <input type="radio" id="attacking" name="position" value="0" checked onchange="calculateSum()">
@@ -113,6 +114,26 @@
 
     <input type="radio" id="stance_defensive" name="stance" value="3" onchange="calculateSum()">
     <label ="stance_defensive">Defensive</label><br><br>
+
+    <p>Enter defender defence and skill:</p>
+    <label for="defence">Atk/ Def: </label>
+    <input type="number" id="defence" min="0" max="120" value="50" oninput="calculateSum()"><br><br>
+
+    <label for="skill">Skill: </label>
+    <input type="number" id="defender_skill" min="0" max="120" value="80" oninput="calculateSum()"><br><br>
+
+
+  <p>Select defender fighting stance:</p>
+    <input type="radio" id="stance_offensive" name="stance_defender" value="1" checked onchange="calculateSum()">
+    <label for="stance_offensive">Offensive</label><br>
+
+    <input type="radio" id="stance_balanced" name="stance_defender" value="2" onchange="calculateSum()">
+    <label ="stance_balanced">Balanced</label><br>
+
+    <input type="radio" id="stance_defensive" name="stance_defender" value="3" onchange="calculateSum()">
+    <label ="stance_defensive">Defensive</label><br><br>
+
+
 
     <p id="result"></p>
 
