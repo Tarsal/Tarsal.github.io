@@ -100,7 +100,7 @@
             //Calculate max damage from skill and modified attack
             var max_damage = Math.floor((5 * parseInt(skill) + 50) * (modified_stat) * (99 + 99) / 2 / 10000);
             
-            max_damage = attack_modifier(5,0,0);
+            max_damage = attack_modifier(5,var_stance,0);
             // Display the result
             document.getElementById('result').innerHTML = "Result is: " + max_damage;
         }
