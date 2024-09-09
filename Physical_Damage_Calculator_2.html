@@ -57,8 +57,8 @@
             function fn_armour(fn_armour_value, fn_roll) {
             //roll is a number between 0-99
             fn_armor_value = parseInt(fn_armour_value);
-            let fn_armour_reduction = fn_armor_value * 0.5 + fn_armor_value * 0.5 * fn_roll / 99;
-            
+            let fn_armour_reduction = parseInt(fn_armor_value * 0.5) + parseInt(fn_armor_value * 0.5 * fn_roll / 99);
+            if (fn_armour_value == 2 or fn_armor_value == 1){ fn_armour_reduction =1;}
             return fn_armour_reduction;
         
         }// end of fn_armor function
@@ -122,7 +122,7 @@
             // Display the result
             document.getElementById('result').innerHTML = "Result is: " + max_damage;
             document.getElementById('test1').innerHTML = "Test1: " + damage(modified_stat,skill,50,50);
-            document.getElementById('test2').innerHTML = "Test2: " + fn_modified_stat;
+            document.getElementById('test2').innerHTML = "Test2: " + fn_armour(11,99);
              
             
              //document.getElementById('test2').innerHTML = "Test2: " + var_stance;
@@ -160,7 +160,7 @@
     <input type="number" id="defence" min="0" max="100" value="37" oninput="calculateSum()"><br><br>
 
     <label for="skill">Skill: </label>
-    <input type="number" id="defender_skill" min="0" max="120" value="79" oninput="calculateSum()"><br><br>
+    <input type="number" id="defender_skill" min="0" max="120" value="78" oninput="calculateSum()"><br><br>
 
     <label for="armour">Armour: </label>
     <input type="number" id="defender_armour" min="0" max="100" value="30" oninput="calculateSum()"><br><br>
