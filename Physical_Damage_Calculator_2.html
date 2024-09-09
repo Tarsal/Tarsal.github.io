@@ -41,12 +41,18 @@
                fn_modified_stat = 999;
 
             } //end of switch
-         document.getElementById('test2').innerHTML = "Test2: " + fn_modified_stat;
+         
         
         return fn_modified_stat;
   
         }//end of stat modifier function
-    
+        
+        function damage(fn_modified_stat, fn_skill, fn_roll_1, fn_roll_2) {
+            //roll is a number between 0-99
+            let fn_damage = Math.floor((5 * parseInt(fn_skill) + 50) * (fn_modified_stat) * (fn_roll_1 + fn_roll_2) / 2 / 10000);
+            return fn_damage;
+        
+        }// end of damage function
     
         function calculateSum() {
             // Get the input values for Attack and Skill
@@ -105,8 +111,11 @@
             
             // Display the result
             document.getElementById('result').innerHTML = "Result is: " + max_damage;
-            document.getElementById('test1').innerHTML = "Test1: " + var_stance;
-            //document.getElementById('test2').innerHTML = "Test2: " + var_stance;
+            document.getElementById('test1').innerHTML = "Test1: " + damage(50,50,50,50);
+            document.getElementById('test2').innerHTML = "Test2: " + fn_modified_stat;
+             
+            
+             //document.getElementById('test2').innerHTML = "Test2: " + var_stance;
         }
     </script>
 </head>
