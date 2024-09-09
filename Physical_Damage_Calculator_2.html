@@ -6,7 +6,7 @@
     <title>Tibiantis and Damage Calculator</title>
     <script>
         function attack_modifier(fn_attack, fn_stance, fn_position) {
-                //stancenum is a number 1-3 where 1 is offensive
+            //fn_stance is a number 1-3 where 1 is offensive
             let fn_switch = parseInt(fn_stance) + parseInt(fn_position); // position is 0 or 3
             fn_attack = parseInt(fn_attack);
             let fn_modified_stat = 0;
@@ -41,7 +41,8 @@
                fn_modified_stat = 999;
 
             document.getElementById('test2').innerHTML = "Test2: " + fn_switch;
-            return fn_modified_stat;
+            //return fn_modified_stat;
+            return 10;
             } //end of switch
             
         }//end of stat modifier function
