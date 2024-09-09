@@ -54,6 +54,16 @@
         
         }// end of damage function
     
+            function fn_armour(fn_armour_value, fn_roll) {
+            //roll is a number between 0-99
+            fn_armor_value = parseInt(fn_armour_value);
+            let fn_armour_reduction = fn_armor_value * 0.5 + fn_armor_value * 0.5 * fn_roll / 99;
+            
+            return fn_armour_reduction;
+        
+        }// end of fn_armor function
+    
+    
         function calculateSum() {
             // Get the input values for Attack and Skill
             var attack = parseInt(document.getElementById('attack').value);
