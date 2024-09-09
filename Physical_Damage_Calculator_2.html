@@ -9,38 +9,38 @@
                 //stancenum is a number 1-3 where 1 is offensive
             let fn_switch = parseInt(fn_stance) + parseInt(fn_position); // position is 0 or 3
             fn_attack = parseInt(fn_attack);
-            let modified_stat = 0;
+            let fn_modified_stat = 0;
             
             switch(fn_switch) {
               case 1:
                 // attacking - offensive
-                modified_stat = fn_attack + Math.floor(0.2 * fn_attack);
+                fn_modified_stat = fn_attack + Math.floor(0.2 * fn_attack);
                 break;
               case 2:
                 // attacking - balanced
-                modified_stat = fn_attack;
+                fn_modified_stat = fn_attack;
                 break;
               case 3:
                 // attacking - defensive
-                modified_stat = fn_attack - Math.floor(0.4 * fn_attack);
+               fn_modified_stat = fn_attack - Math.floor(0.4 * fn_attack);
                 break;
               case 4:
                 // defending - offensive
-                modified_stat = fn_attack - Math.floor(0.4 * fn_attack);
+                fn_modified_stat = fn_attack - Math.floor(0.4 * fn_attack);
                 break;
               case 5:
                 // defending - balanced
-                modified_stat = fn_attack;
+                fn_modified_stat = fn_attack;
                 break;     
               case 6:
                 // defending - defensive
-                modified_stat = fn_attack + Math.floor(0.8 * fn_attack);
+                fn_modified_stat = fn_attack + Math.floor(0.8 * fn_attack);
                 break;
                 
                 default:
-                modified_stat = 999;
+               fn_modified_stat = 999;
                 
-            return modified_stat;
+            return fn_modified_stat;
             
         }//end of stat modifier
     
@@ -136,7 +136,7 @@
     <input type="number" id="defence" min="0" max="100" value="37" oninput="calculateSum()"><br><br>
 
     <label for="skill">Skill: </label>
-    <input type="number" id="defender_skill" min="0" max="120" value="75" oninput="calculateSum()"><br><br>
+    <input type="number" id="defender_skill" min="0" max="120" value="74" oninput="calculateSum()"><br><br>
 
     <label for="armour">Armour: </label>
     <input type="number" id="defender_armour" min="0" max="100" value="30" oninput="calculateSum()"><br><br>
