@@ -78,15 +78,29 @@
             var var_stance = parseInt(document.querySelector('input[name="stance"]:checked').value);
             var modified_stat;
             
-            let two_dice_probability = [];
+            let two_dice_distrib = [];
+            
+            // array with max of 1000.
+            let initial_damage_distrib = new Array(1000).fill(0); // initial damage
+            let damage_after_block_distrib = new Array(1000).fill(0); // after block only
+            let final_damage_distrib = new Array(1000).fill(0); // after block and armor
+            
 
+
+            // I want damage distribution
+            // I want damage after shielding reduced i.e poff
+            // I want damage after armor i.e armor chink.
+
+            // code that calculates odds of each 2 dice result. 199 long ends in 198
             for (let i = 0; i <= 99; i++) {
-                two_dice_probability.push((i + 1) / 10000);
+                two_dice_distrib.push((i + 1) / 10000);
             }
             
             for (let i = 100; i <= 198; i++) {
-                two_dice_probability.push((199 - i) / 10000);
+                two_dice_distrib.push((199 - i) / 10000);
             }
+
+
 
             
             modified_stat = attack_modifier(attack,var_stance,0);
