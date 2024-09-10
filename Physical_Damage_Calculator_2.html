@@ -63,7 +63,6 @@
         
         }// end of fn_armor function
     
-    
         function calculateSum() {
             // Get the input values for Attack and Skill
             var attack = parseInt(document.getElementById('attack').value);
@@ -74,46 +73,10 @@
                 document.getElementById('result').innerHTML = "Please enter integers between 0 and 120.";
                 return;
             }
-
             
             // Check which stance is selected
             var var_stance = parseInt(document.querySelector('input[name="stance"]:checked').value);
-            
-            var stance_multiplier;
             var modified_stat;
-            
-            // Switch to find and apply stance multiplier
-            switch(parseInt(var_stance)) {
-              case 1:
-                // attacking - offensive
-                modified_stat = parseInt(attack) + Math.floor(0.2 * parseInt(attack));
-                break;
-              case 2:
-                // attacking - balanced
-                modified_stat = parseInt(attack);
-                break;
-              case 3:
-                // attacking - defensive
-                modified_stat = parseInt(attack) - Math.floor(0.4 * parseInt(attack));
-                break;
-              case 4:
-                // defending - offensive
-                modified_stat = parseInt(attack) - Math.floor(0.4 * parseInt(attack));
-                break;
-              case 5:
-                // defending - balanced
-                modified_stat = parseInt(attack);
-                break;     
-              case 6:
-                // defending - defensive
-                modified_stat = parseInt(attack) + Math.floor(0.8 * parseInt(attack));
-                break;
-                
-                default:
-                modified_stat = 999;
-                
-                // code block
-            }
             
             let two_dice_probability = [];
 
