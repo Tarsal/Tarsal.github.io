@@ -106,7 +106,7 @@
                 let for_dam = parseInt(damage(modified_stat,skill,i,0));
                 initial_damage_distrib[for_dam] += two_dice_distrib[i];
             }
-            var max_damage = initial_damage_distrib[198]; // looks at the damage highest roll
+            var max_damage = damage(modified_stat,skill,198,0); // looks at the damage highest roll
 
             
             
