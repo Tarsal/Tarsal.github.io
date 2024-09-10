@@ -67,6 +67,8 @@
             // Get the input values for Attack and Skill
             var attack = parseInt(document.getElementById('attack').value);
             var skill = parseInt(document.getElementById('attacker_skill').value);
+            var defence = parseInt(document.getElementById('defence').value);
+            var defender_skill = parseInt(document.getElementById('defender_skill').value);
             
             // Check if Attack and Skill are valid integers between 0 and 120
             if (isNaN(attack) || attack < 0 || attack > 120 || isNaN(skill) || skill < 0 || skill > 120) {
@@ -74,8 +76,16 @@
                 return;
             }
             
+            // Check if Attack and Skill are valid integers between 0 and 120
+            if (isNaN(defence) || defence < 0 || defence > 120 || isNaN(defender_skill) || defender_skill < 0 || defender_skill > 120) {
+                document.getElementById('result').innerHTML = "Please enter integers between 0 and 120.";
+                return;
+            }
+            
             // Check which stance is selected
             var var_stance = parseInt(document.querySelector('input[name="stance"]:checked').value);
+            var var_defender_stance = parseInt(document.querySelector('input[name="stance_defender"]:checked').value);
+            
             var modified_stat;
             
             let two_dice_distrib = [];
@@ -108,7 +118,11 @@
             }
             var max_damage = damage(modified_stat,skill,198,0); // looks at the damage highest roll
 
-            
+            let modified_block = attack_modifier(defence,var_defender_stance,0);
+            for (let i = 0; i <= 198; i++) {
+                let for_block = parseInt(damage(modified_block,defender_skill,i,0));
+                initial_damage_distrib[for_block] += two_dice_distrib[i];
+            }
             
             //Calculate max damage from skill and modified attack
             // var max_damage = Math.floor((5 * parseInt(skill) + 50) * (modified_stat) * (99 + 99) / 2 / 10000);
