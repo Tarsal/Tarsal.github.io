@@ -106,11 +106,12 @@
                 let for_dam = parseInt(damage(modified_stat,skill,i,0));
                 initial_damage_distrib[for_dam] += two_dice_distrib[i];
             }
+            var max_damage = initial_damage_distrib[198]; // looks at the damage highest roll
 
             
             
             //Calculate max damage from skill and modified attack
-            var max_damage = Math.floor((5 * parseInt(skill) + 50) * (modified_stat) * (99 + 99) / 2 / 10000);
+            // var max_damage = Math.floor((5 * parseInt(skill) + 50) * (modified_stat) * (99 + 99) / 2 / 10000);
             
             // Display the result
             document.getElementById('result').innerHTML = "Result is: " + max_damage;
