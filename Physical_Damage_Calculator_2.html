@@ -69,6 +69,7 @@
             var skill = parseInt(document.getElementById('attacker_skill').value);
             var defence = parseInt(document.getElementById('defence').value);
             var defender_skill = parseInt(document.getElementById('defender_skill').value);
+            var armour = parseInt(document.getElementById('armour').value);
             
             // Check if Attack and Skill are valid integers between 0 and 120
             if (isNaN(attack) || attack < 0 || attack > 120 || isNaN(skill) || skill < 0 || skill > 120) {
@@ -76,11 +77,18 @@
                 return;
             }
             
-            // Check if Attack and Skill are valid integers between 0 and 120
+            // Check if defence and Skill are valid integers between 0 and 120
             if (isNaN(defence) || defence < 0 || defence > 120 || isNaN(defender_skill) || defender_skill < 0 || defender_skill > 120) {
                 document.getElementById('result').innerHTML = "Please enter integers between 0 and 120.";
                 return;
             }
+            
+            // Check if armour is valid integers between 0 and 120
+            if (isNaN(armour) || armour < 0 || armour > 120) {
+                document.getElementById('result').innerHTML = "Please enter integers between 0 and 120.";
+                return;
+            }
+            
             
             // Check which stance is selected
             var var_stance = parseInt(document.querySelector('input[name="stance"]:checked').value);
@@ -195,7 +203,7 @@
     <label ="blocking_two">2</label><br><br>
 
 
-    <p id="result"></p>
+    <p id="result"></p> // result is error code
     <p id="test1"></p>
     <p id="test2"></p>
     
