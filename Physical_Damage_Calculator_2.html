@@ -191,7 +191,9 @@
             let sum_chance =  final_damage_distrib.reduce((accumulator,currentValue) => accumulator + currentValue, 0);
          
             //efficiency = 1 - pow(miss_chance,(30/(blocking+1)));
-
+            //for (i = 0; i < MAX_ARRAY; i++) {
+            //average += dist[i] * i; }
+            //average_hit = average / (1 - dist[0]);
             
             // Display the result
             document.getElementById('result').innerHTML = "Result is: " + max_damage;
