@@ -146,11 +146,20 @@
             var min_armour = fn_armour(armour,0);
             var max_armour = fn_armour(armour,99);
             
-            for (let i = 0; i < max_damage+1; i++)
+            for (let i = 0; i < max_damage+1; i++) //damage
             {
-                for (let j = 0; j < max_block+1; j++)
+                for (let j = 0; j < max_block+1; j++) //block
                 {
-                    damage_after_block_distrib[1] = 1;
+                    let hit = 0;
+                    if (i-j < 0)
+                    {
+                        hit = 0;    
+                    }
+                    else
+                    {
+                        hit = i-j; // sub zero values become zero   
+                    }
+                    damage_after_block_distrib[hit] +=  initial_damage_distrib[i] * initial_block_distrib[j];
                 }
             }
             //Calculate max damage from skill and modified attack
