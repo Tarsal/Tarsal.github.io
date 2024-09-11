@@ -120,13 +120,15 @@
                 two_dice_distrib.push((199 - i) / 10000);
             }
             
-            modified_stat = attack_modifier(attack,var_stance,0);
-
+        
             //run damage distribution
+            modified_stat = attack_modifier(attack,var_stance,0);
             for (let i = 0; i <= 198; i++) {
                 let for_dam = parseInt(damage(modified_stat,skill,i,0));
                 initial_damage_distrib[for_dam] += two_dice_distrib[i];
             }
+
+            var max_damage = damage(modified_stat,skill,198,0); // looks at the damage highest roll
             
             //run block distribution
             let modified_block = attack_modifier(defence,var_defender_stance,0);
@@ -135,14 +137,15 @@
                 initial_block_distrib[for_block] += two_dice_distrib[i];
             }
             
+            var max_block = damage(modified_stat,defender_skill,198,0); // highest block roll
+            
             //run armour distribution
             for (let i = 0; i <= 99; i++) {
                 let for_armour = fn_armour(armour,i);
                 initial_armour_distrib[for_armour] += 1/100;
             }
-            
-            var max_damage = damage(modified_stat,skill,198,0); // looks at the damage highest roll
-            var max_block = damage(modified_stat,defender_skill,198,0); // highest block roll
+    
+                     
             var min_armour = fn_armour(armour,0);
             var max_armour = fn_armour(armour,99);
 
