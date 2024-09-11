@@ -183,6 +183,7 @@
             } // end of for j
 
             var miss_chance = final_damage_distrib[0];
+            var hit_chance_percent = miss_chance.toFixed(2);
             
             //Calculate max damage from skill and modified attack
             // var max_damage = Math.floor((5 * parseInt(skill) + 50) * (modified_stat) * (99 + 99) / 2 / 10000);
@@ -191,7 +192,7 @@
             document.getElementById('result').innerHTML = "Result is: " + max_damage;
             document.getElementById('test1').innerHTML = "Test1: " + damage(modified_stat,skill,50,50);
             document.getElementById('test2').innerHTML = "Test2: " + fn_armour(11,99);
-            document.getElementById('chance_to_hit').innerHTML = "Percent chance to hit: " + miss_chance*100;
+            document.getElementById('chance_to_hit').innerHTML = "Percent chance to hit: " + 1-miss_chance*100;
              
             
              //document.getElementById('test2').innerHTML = "Test2: " + var_stance;
@@ -229,7 +230,7 @@
     <input type="number" id="defence" min="0" max="100" value="37" oninput="calculateSum()"><br><br>
 
     <label for="skill">Skill: </label>
-    <input type="number" id="defender_skill" min="0" max="120" value="76" oninput="calculateSum()"><br><br>
+    <input type="number" id="defender_skill" min="0" max="120" value="77" oninput="calculateSum()"><br><br>
 
     <label for="armour">Armour: </label>
     <input type="number" id="defender_armour" min="0" max="100" value="30" oninput="calculateSum()"><br><br>
