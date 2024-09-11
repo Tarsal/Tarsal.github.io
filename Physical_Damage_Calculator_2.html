@@ -190,8 +190,8 @@
             var hit_chance_tdp = hit_chance.toFixed(2); //2 decimal place
             let sum_chance =  final_damage_distrib.reduce((accumulator,currentValue) => accumulator + currentValue, 0);
          
-            //Calculate max damage from skill and modified attack
-            // var max_damage = Math.floor((5 * parseInt(skill) + 50) * (modified_stat) * (99 + 99) / 2 / 10000);
+            //efficiency = 1 - pow(miss_chance,(30/(blocking+1)));
+
             
             // Display the result
             document.getElementById('result').innerHTML = "Result is: " + max_damage;
