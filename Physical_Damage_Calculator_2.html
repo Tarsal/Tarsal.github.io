@@ -145,7 +145,8 @@
             var max_block = damage(modified_stat,defender_skill,198,0); // highest block roll
             var min_armour = fn_armour(armour,0);
             var max_armour = fn_armour(armour,99);
-            
+
+            // attack minus block
             for (let i = 0; i < max_damage+1; i++) //damage
             {
                 for (let j = 0; j < max_block+1; j++) //block
@@ -162,6 +163,27 @@
                     damage_after_block_distrib[hit] +=  initial_damage_distrib[i] * initial_block_distrib[j];
                 }
             }
+
+            // attack minus block and armour
+            for (let i = 0; i < max_damage+1; i++) //damage
+            {
+                for (let j = min_armour; j < max_armour+1; j++) //armour
+                {
+                    let hit = 0;
+                    if (i-j < 0)
+                    {
+                        hit = 0;    
+                    }
+                    else
+                    {
+                        hit = i-j; // sub zero values become zero   
+                    }
+                     final_damage_distrib[hit] +=  damage_after_block_distrib[i] * initial_armour_distrib[j];
+                }
+            }
+
+
+            
             //Calculate max damage from skill and modified attack
             // var max_damage = Math.floor((5 * parseInt(skill) + 50) * (modified_stat) * (99 + 99) / 2 / 10000);
             
@@ -206,7 +228,7 @@
     <input type="number" id="defence" min="0" max="100" value="37" oninput="calculateSum()"><br><br>
 
     <label for="skill">Skill: </label>
-    <input type="number" id="defender_skill" min="0" max="120" value="78" oninput="calculateSum()"><br><br>
+    <input type="number" id="defender_skill" min="0" max="120" value="77" oninput="calculateSum()"><br><br>
 
     <label for="armour">Armour: </label>
     <input type="number" id="defender_armour" min="0" max="100" value="30" oninput="calculateSum()"><br><br>
