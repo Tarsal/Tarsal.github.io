@@ -161,8 +161,8 @@
                         hit = i-j; // sub zero values become zero   
                     }
                     damage_after_block_distrib[hit] +=  initial_damage_distrib[i] * initial_block_distrib[j];
-                }
-            }
+                } //end of for i
+            } //end of for j
 
             // attack minus block and armour
             for (let i = 0; i < max_damage+1; i++) //damage
@@ -179,10 +179,10 @@
                         hit = i-j; // sub zero values become zero   
                     }
                      final_damage_distrib[hit] +=  damage_after_block_distrib[i] * initial_armour_distrib[j];
-                }
-            }
+                } //end of for i
+            } // end of for j
 
-
+            var miss_chance = final_damage_distrib[0];
             
             //Calculate max damage from skill and modified attack
             // var max_damage = Math.floor((5 * parseInt(skill) + 50) * (modified_stat) * (99 + 99) / 2 / 10000);
@@ -191,6 +191,7 @@
             document.getElementById('result').innerHTML = "Result is: " + max_damage;
             document.getElementById('test1').innerHTML = "Test1: " + damage(modified_stat,skill,50,50);
             document.getElementById('test2').innerHTML = "Test2: " + fn_armour(11,99);
+            document.getElementById('chance_to_hit').innerHTML = "Percent chance to hit: " + miss_chance*100;
              
             
              //document.getElementById('test2').innerHTML = "Test2: " + var_stance;
@@ -228,7 +229,7 @@
     <input type="number" id="defence" min="0" max="100" value="37" oninput="calculateSum()"><br><br>
 
     <label for="skill">Skill: </label>
-    <input type="number" id="defender_skill" min="0" max="120" value="77" oninput="calculateSum()"><br><br>
+    <input type="number" id="defender_skill" min="0" max="120" value="76" oninput="calculateSum()"><br><br>
 
     <label for="armour">Armour: </label>
     <input type="number" id="defender_armour" min="0" max="100" value="30" oninput="calculateSum()"><br><br>
@@ -258,6 +259,7 @@
     <p id="result"></p> 
     <p id="test1"></p>
     <p id="test2"></p>
+    <p id="chance_to_hit"></p>
     
 
 </body>
