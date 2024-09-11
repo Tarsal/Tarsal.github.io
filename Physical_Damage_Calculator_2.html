@@ -146,6 +146,13 @@
             var min_armour = fn_armour(armour,0);
             var max_armour = fn_armour(armour,99);
             
+            for (let i = 0; i < max_damage+1; i++)
+            {
+                for (let j = 0; j < max_block+1; j++)
+                {
+                    damage_after_block_distrib[1] = 1;
+                }
+            }
             //Calculate max damage from skill and modified attack
             // var max_damage = Math.floor((5 * parseInt(skill) + 50) * (modified_stat) * (99 + 99) / 2 / 10000);
             
