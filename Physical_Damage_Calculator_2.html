@@ -200,14 +200,15 @@
             let cumulative_chance = 0;
             let high_hit = new Array(14).fill(0);
             let cumulative_chance_flag=0;
+            
             for (let i = 0; i< max_damage+1; i++) {
                 average_damage += final_damage_distrib[i] * i;
             
-                cumulative_chance += final_damage_distrib[i];
-                if (cumulative chance > 1-1/1000 && cumulative_chance_flag < 1){
-                    high_hit[13] = i;
-                    cumulative_chance_flag = i;
-                } // end of if
+                //cumulative_chance += final_damage_distrib[i];
+                //if (cumulative chance > 1-1/1000 && cumulative_chance_flag < 1){
+                    //high_hit[13] = i;
+                    //cumulative_chance_flag = i;
+              //  } // end of if
             } // end of for
             average_damage_tdp = average_damage.toFixed(1);
             
