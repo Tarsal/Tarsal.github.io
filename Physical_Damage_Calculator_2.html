@@ -271,15 +271,6 @@
     <input type="number" id="attacker_skill" min="0" max="120" value="80" oninput="calculateSum()"><br><br>
 
 
-<p>Attacker blocking:</p>
-    <input type="radio" id="blocking_zero" name="quantity_blocking" value="0" checked onchange="calculateSum()">
-    <label for="blocking_zero">0 or no shield</label><br>
-
-    <input type="radio" id="blocking_one" name="quantity_blocking" value="1" onchange="calculateSum()">
-    <label ="blocking_one">1</label><br>
-
-    <input type="radio" id="blocking_two" name="quantity_blocking" value="2" onchange="calculateSum()">
-    <label ="blocking_two">2</label><br><br>
 </td>
             
 <td>
@@ -293,15 +284,6 @@
     <input type="number" id="defender_armour" min="0" max="100" value="30" oninput="calculateSum()"><br><br>
 
 
-  <p>Defender stance:</p>
-    <input type="radio" id="stance_offensive" name="stance_defender" value="1" checked onchange="calculateSum()">
-    <label for="stance_offensive">Offensive (0.6)</label><br>
-
-    <input type="radio" id="stance_balanced" name="stance_defender" value="2" onchange="calculateSum()">
-    <label ="stance_balanced">Balanced (1.0)</label><br>
-
-    <input type="radio" id="stance_defensive" name="stance_defender" value="3" onchange="calculateSum()">
-    <label ="stance_defensive">Defensive (1.8)</label><br><br>
 </td>
         </tr>
         <tr>
@@ -316,10 +298,31 @@
     <input type="radio" id="stance_defensive" name="stance" value="3" onchange="calculateSum()">
     <label ="stance_defensive">Defensive (0.6)</label><br><br>
 </td>
-            <td>Row 2, Cell 2</td>
+
+<td>
+    <p>Defender stance:</p>
+    <input type="radio" id="stance_offensive" name="stance_defender" value="1" checked onchange="calculateSum()">
+    <label for="stance_offensive">Offensive (0.6)</label><br>
+
+    <input type="radio" id="stance_balanced" name="stance_defender" value="2" onchange="calculateSum()">
+    <label ="stance_balanced">Balanced (1.0)</label><br>
+
+    <input type="radio" id="stance_defensive" name="stance_defender" value="3" onchange="calculateSum()">
+    <label ="stance_defensive">Defensive (1.8)</label><br><br>
+</td>
         </tr>
         <tr>
-            <td>Row 3, Cell 1</td>
+<td>
+    <p>Attacker blocking:</p>
+    <input type="radio" id="blocking_zero" name="quantity_blocking" value="0" checked onchange="calculateSum()">
+    <label for="blocking_zero">0 or no shield</label><br>
+
+    <input type="radio" id="blocking_one" name="quantity_blocking" value="1" onchange="calculateSum()">
+    <label ="blocking_one">1</label><br>
+
+    <input type="radio" id="blocking_two" name="quantity_blocking" value="2" onchange="calculateSum()">
+    <label ="blocking_two">2</label><br><br>
+</td>
             <td>Row 3, Cell 2</td>
         </tr>
     </table>
