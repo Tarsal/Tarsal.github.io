@@ -204,12 +204,13 @@
             for (let i = 0; i< max_damage+1; i++) {
                 average_damage += final_damage_distrib[i] * i;
             
-                //cumulative_chance += final_damage_distrib[i];
+                cumulative_chance += final_damage_distrib[i];
                 //if (cumulative chance > 1-1/1000 && cumulative_chance_flag < 1){
                     //high_hit[13] = i;
-                    //cumulative_chance_flag = i;
+                    //cumulative_chance_flag = 1;
               //  } // end of if
             } // end of for
+
             average_damage_tdp = average_damage.toFixed(1);
             
             average_hit = average_damage / (1 - miss_chance);
