@@ -218,6 +218,8 @@
             let cumulative_chance = 0;
             let high_hit = new Array(6).fill(0);// 10, 90 , 99, 99.9, 99.99
             let cumulative_chance_flag = new Array(6).fill(0);
+            let user_hit = parseInt(document.getElementById('id_user_hit').value;
+            let user_hit_chance = 0;
             
             for (let i = 0; i< max_damage+1; i++) {
                 average_damage += final_damage_distrib[i] * i;
@@ -243,6 +245,8 @@
                     high_hit[4] = i;
                     cumulative_chance_flag[4] = 1;
                 } // end of if
+                if (i == user_hit) {
+                    user_hit_chance = (100 * 1 - cumulative_chance)
             } // end of for
 
             average_damage_tdp = average_damage.toFixed(1);
