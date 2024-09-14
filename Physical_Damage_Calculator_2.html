@@ -210,8 +210,8 @@
             let average_hit = 0;
             let average_hit_tdp = 0;
             let cumulative_chance = 0;
-            let high_hit = new Array(5).fill(0);// 10, 90 , 99, 99.9, 99.99
-            let cumulative_chance_flag = new Array(5).fill(0);
+            let high_hit = new Array(6).fill(0);// 10, 90 , 99, 99.9, 99.99
+            let cumulative_chance_flag = new Array(6).fill(0);
             
             for (let i = 0; i< max_damage+1; i++) {
                 average_damage += final_damage_distrib[i] * i;
@@ -374,5 +374,7 @@
     
 </table>
 
+<label for="user_hit">xx: </label>
+<input type="number" id="id_user_hit" min="0" max="1000" value="100" oninput="calculateSum()"><br><br>
 </body>
 </html>
