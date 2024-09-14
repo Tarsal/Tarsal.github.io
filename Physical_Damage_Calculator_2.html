@@ -12,6 +12,14 @@
         padding-right: 5px;
         text-align: left;
         vertical-align: top;
+        
+         .no-border {
+            border: none;
+            outline: none;
+            background-color: #f0f0f0;
+            padding: 5px;
+            width: 100px;
+        }
     }
     </style>
 
@@ -375,6 +383,6 @@
 </table>
 
 <label for="user_hit">xx: </label>
-<input type="number" id="id_user_hit" min="0" max="1000" value="100" oninput="calculateSum()"><br><br>
+<input type="number" class="no-border" id="id_user_hit" min="0" max="1000" value="100" oninput="calculateSum()"><br><br>
 </body>
 </html>
