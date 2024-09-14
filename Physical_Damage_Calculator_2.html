@@ -376,18 +376,19 @@
 <h3>Top X% hit</h3>
 
 <table border = "1" style = "border-collapse:collapse;">
-    <tr><th>X</th><th>90%</th><th>10%</th><th>1%</th><th>0.1%</th><th>0.01%</td></th>
-    <tr><th>Hit</th>
+    <tr><th>X</th><th>90%</th><th>10%</th><th>1%</th><th>0.1%</th><th>0.01%</td></th><th id="id_user_hit_chance> </th>  <tr>
+        <th>Hit</th>
         <td id="top_0.1_hit"></td>
         <td id="top_10_hit"></td>
         <td id="top_100_hit"></td>
         <td id="top_1000_hit"></td>
-        <td id="top_10000_hit"></td></tr>
+        <td id="top_10000_hit"></td>
+        <td <input type="number" id="id_user_hit" min="0" max="1000" value="100" oninput="calculateSum()"> </td></tr>
     
 </table>
 
 <!--<label for="user_hit">xx: </label>-->
-<input type="number" id="id_user_hit" min="0" max="1000" value="100" oninput="calculateSum()"><br><br>
+<br><br>
 <p id="id_user_hit_chance"></p>
 </body>
 </html>
