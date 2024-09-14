@@ -217,9 +217,25 @@
                 average_damage += final_damage_distrib[i] * i;
             
                 cumulative_chance += final_damage_distrib[i];
+                if (cumulative_chance > 1-9/10 && cumulative_chance_flag[3] < 1){
+                    high_hit[0] = i;
+                    cumulative_chance_flag[0] = 1;
+                } // end of if
+                if (cumulative_chance > 1-1/10 && cumulative_chance_flag[3] < 1){
+                    high_hit[1] = i;
+                    cumulative_chance_flag[1] = 1;
+                } // end of if
+                if (cumulative_chance > 1-1/100 && cumulative_chance_flag[3] < 1){
+                    high_hit[2] = i;
+                    cumulative_chance_flag[2] = 1;
+                } // end of if
                 if (cumulative_chance > 1-1/1000 && cumulative_chance_flag[3] < 1){
                     high_hit[3] = i;
                     cumulative_chance_flag[3] = 1;
+                } // end of if
+                if (cumulative_chance > 1-1/10000 && cumulative_chance_flag[3] < 1){
+                    high_hit[4] = i;
+                    cumulative_chance_flag[4] = 1;
                 } // end of if
             } // end of for
 
@@ -241,7 +257,11 @@
             document.getElementById('average_damage').innerHTML = "Average damage: " + average_damage_tdp;
             document.getElementById('average_hit').innerHTML = "Average hit: " + average_hit_tdp;
             document.getElementById('training_efficiency').innerHTML = "Training efficiency: " + training_efficiency_tdp + "%";
+            document.getElementById('top_0.1_hit').innerHTML = high_hit[0];
+            document.getElementById('top_10_hit').innerHTML = high_hit[1];
+            document.getElementById('top_100_hit').innerHTML = high_hit[2];
             document.getElementById('top_1000_hit').innerHTML = high_hit[3];
+            document.getElementById('top_10000_hit').innerHTML = high_hit[4];
              
             
             //document.getElementById('test2').innerHTML = "Test2: " + var_stance;
@@ -345,7 +365,12 @@
 
 <table border = "1" style = "border-collapse:collapse;">
     <tr><th>X</th><th>90%</th><th>10%</th><th>1%</th><th>0.1%</th><th>0.01%</td></th>
-    <tr><th>Hit</th><td></td><td></td><td></td><td id="top_1000_hit"></td><td></td></tr>
+    <tr><th>Hit</th>
+        <td id="top_0.1_hit"></td>
+        <td id="top_10_hit"></td>
+        <td id="top_100_hit"></td>
+        <td id="top_1000_hit"></td>
+        <td id="top_10000_hit"></td></tr>
     
 </table>
 
