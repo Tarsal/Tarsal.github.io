@@ -217,15 +217,15 @@
                 average_damage += final_damage_distrib[i] * i;
             
                 cumulative_chance += final_damage_distrib[i];
-                if (cumulative_chance > 1-9/10 && cumulative_chance_flag[3] < 1){
+                if (cumulative_chance > 1-9/10 && cumulative_chance_flag[0] < 1){
                     high_hit[0] = i;
                     cumulative_chance_flag[0] = 1;
                 } // end of if
-                if (cumulative_chance > 1-1/10 && cumulative_chance_flag[3] < 1){
+                if (cumulative_chance > 1-1/10 && cumulative_chance_flag[1] < 1){
                     high_hit[1] = i;
                     cumulative_chance_flag[1] = 1;
                 } // end of if
-                if (cumulative_chance > 1-1/100 && cumulative_chance_flag[3] < 1){
+                if (cumulative_chance > 1-1/100 && cumulative_chance_flag[2] < 1){
                     high_hit[2] = i;
                     cumulative_chance_flag[2] = 1;
                 } // end of if
@@ -233,7 +233,7 @@
                     high_hit[3] = i;
                     cumulative_chance_flag[3] = 1;
                 } // end of if
-                if (cumulative_chance > 1-1/10000 && cumulative_chance_flag[3] < 1){
+                if (cumulative_chance > 1-1/10000 && cumulative_chance_flag[4] < 1){
                     high_hit[4] = i;
                     cumulative_chance_flag[4] = 1;
                 } // end of if
