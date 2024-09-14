@@ -212,15 +212,16 @@
             let cumulative_chance = 0;
             let high_hit = new Array(14).fill(0);
             let cumulative_chance_flag=0;
+            let high_hit_2 = 0;
             
             for (let i = 0; i< max_damage+1; i++) {
                 average_damage += final_damage_distrib[i] * i;
             
                 cumulative_chance += final_damage_distrib[i];
-                //if (cumulative chance > 1-1/1000 && cumulative_chance_flag < 1){
-                    //high_hit[13] = i;
-                    //cumulative_chance_flag = 1;
-              //  } // end of if
+                if (cumulative chance > 1-1/1000 && cumulative_chance_flag < 1){
+                    high_hit_2 = i;
+                    cumulative_chance_flag = 1;
+                } // end of if
             } // end of for
 
             average_damage_tdp = average_damage.toFixed(1);
@@ -233,7 +234,7 @@
             
             // Display the result
             document.getElementById('result').innerHTML = "Max damage: " + max_damage;
-            //document.getElementById('test1').innerHTML = "Test1: " + high_hit[13];
+            document.getElementById('test1').innerHTML = "Test1: " + high_hit_2;
             //document.getElementById('test2').innerHTML = "Test2: xxx";
             document.getElementById('modified_attack_').innerHTML = "Modified attack: " + attack_modifier(attack,var_stance,0);
            document.getElementById('modified_defence_').innerHTML = "Modified defence: " + attack_modifier(defence,var_defender_stance,3);
