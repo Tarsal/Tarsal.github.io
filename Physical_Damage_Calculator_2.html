@@ -272,6 +272,7 @@
             document.getElementById('top_100_hit').innerHTML = high_hit[2];
             document.getElementById('top_1000_hit').innerHTML = high_hit[3];
             document.getElementById('top_10000_hit').innerHTML = high_hit[4];
+            document.getElementById('id_user_hit_chance').innerHTML = user_hit_chance;
              
             
             //document.getElementById('test2').innerHTML = "Test2: " + var_stance;
@@ -386,5 +387,6 @@
 
 <!--<label for="user_hit">xx: </label>-->
 <input type="number" id="id_user_hit" min="0" max="1000" value="100" oninput="calculateSum()"><br><br>
+<p id="id_user_hit_chance"></p>
 </body>
 </html>
